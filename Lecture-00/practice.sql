@@ -91,3 +91,18 @@ select AVG(price_lakh) as average_price from cars; -- Find the average price_lak
 select MAX(price_lakh) from cars;-- Maximum price_lakh
 select MIN(price_lakh) from cars;-- Minimum price_ lakh
 select distinct Fuel from cars; -- different fuels
+select * from cars LIMIT 5; -- Show only the first 5 cars.
+select * from cars LIMIT 10;-- Show only the first 10 cars.
+select * from cars order by price_lakh desc limit 3; -- Show the 3 most expensive cars.
+select * from cars order by price_lakh limit 5; -- Show the 5 most cheapest cars.
+select * from cars limit 5 offset 5; -- Skip the first 5 cars and show the next 5 cars.
+select * from cars where brand= 'Toyota' order by price_lakh desc limit 4;  -- Show the 4 most expensive Toyota cars.
+select * from cars order by brand asc , price_lakh desc; -- Show all cars ordered by brand ASC and then price_lakh DESC.
+select * from cars order by year desc,price_lakh desc,brand asc; -- Show all cars ordered by year DESC, then price_lakh DESC, then brand ASC.
+select * from cars order by fuel asc,city asc,model desc; -- Show all cars ordered by fuel ASC, city ASC, and model DESC.
+select AVG(price_lakh) as amd_average from cars where city= 'Ahmedabad' and fuel= 'Petrol';-- Find the average price of Petrol cars in Ahmedabad.
+select COUNT(model) from cars where brand='Toyota';-- Count all Toyota Automatic cars.
+select MAX(price_lakh) from cars where transmission = 'Automatic';-- Find the maximum price of Automatic cars.
+select MIN(stock) from cars where fuel = 'Diesel';-- Find the minimum stock of Diesel cars
+select AVG(price_lakh) from cars where year>2022; -- Find the average price of cars manufactured after 2022.
+select COUNT(model) from cars where city ='Ahmedabad'; -- Count the number of Petrol cars in Ahmedabad
