@@ -105,3 +105,4 @@ INSERT INTO sale VALUES
 			(15,22,7,15);
 select * from sale;
 drop table sales;
+select * from customers;
