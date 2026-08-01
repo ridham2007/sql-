@@ -106,3 +106,31 @@ INSERT INTO sale VALUES
 select * from sale;
 drop table sales;
 select * from customers;
+
+
+select * from suzuki;                     -- Show all cars.
+select car_name,price_lakh from suzuki;   -- Show only car_name and price_lakh.
+select * from suzuki where fuel='petrol'; -- Show all Petrol cars.
+select * from suzuki where price_lakh>10; -- Show all cars costing more than 10 lakh
+select * from suzuki order by price_lakh desc; -- Show all cars ordered by price from highest to lowest.
+select count(*) from suzuki; -- Count total cars.
+select AVG(price_lakh) from suzuki; -- Find the average price of all cars.
+select DISTINCT fuel from suzuki; 	-- Show unique fuel types.
+select * from customers; 			-- Show all customers 
+select * from customers where c_city='AMD'; -- Show customers from Ahmedabad.
+SELECT COUNT(*),c_city FROM CUSTOMERS group by c_city; -- Count customers in each city
+SELECT c_name from customers ORDER BY c_name; -- Show customer names in alphabetical order.
+
+select * from employees; -- Show all employees
+select * from employees where e_city='SNR'; -- Show employees from Surendranagar.
+select count(*) from employees; -- Count total employees.
+select e_name from employees order by e_name; -- Show employee names in alphabetical order.
+
+select * from sale; -- Show all sales
+select count(*) from sale; -- Count total sales.
+select * from sale order by sale_id desc; -- Show sales ordered by sale_id descending.
+select sale_id,car_id,e_id from sale; -- Show only sale_id, car_id, and e_id.
+
+
+
+

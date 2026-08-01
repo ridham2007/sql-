@@ -81,7 +81,7 @@ select * from cars where city != 'ahmedabad';-- Show all cars that are NOT from 
 select * from cars where city='Surat' and price_lakh>'20';-- Show all cars where city = 'Surat' AND price_lakh > 20.
 select * from cars where brand like 'T%'; -- Show all cars where brand starts with 'T'.
 select * from cars where model like '%a'; -- Show all cars where model ends with 'a'.
- select * from cars where price_lakh between 15 and 30;-- Show all cars where price_lakh is between 15 and 30.
+select * from cars where price_lakh between 15 and 30;-- Show all cars where price_lakh is between 15 and 30.
 select * from cars where owner_name is NULL; -- Show all cars where owner_name is NULL.
 select * from cars where owner_name is NOT NULL; -- Show all cars where owner_name is NOT NULL.-
 select * from cars order by  price_lakh desc;  -- Show all cars ordered by price_lakh in descending order. 
@@ -105,4 +105,5 @@ select COUNT(model) from cars where brand='Toyota';-- Count all Toyota Automatic
 select MAX(price_lakh) from cars where transmission = 'Automatic';-- Find the maximum price of Automatic cars.
 select MIN(stock) from cars where fuel = 'Diesel';-- Find the minimum stock of Diesel cars
 select AVG(price_lakh) from cars where year>2022; -- Find the average price of cars manufactured after 2022.
-select COUNT(model) from cars where city ='Ahmedabad'; -- Count the number of Petrol cars in Ahmedabad
+select COUNT(model) from cars where city ='Ahmedabad'; -- Count the number of Petrol cars in Ahmedabad   
+  
