@@ -131,6 +131,16 @@ select count(*) from sale; -- Count total sales.
 select * from sale order by sale_id desc; -- Show sales ordered by sale_id descending.
 select sale_id,car_id,e_id from sale; -- Show only sale_id, car_id, and e_id.
 
-
-
-
+select c_name,car_name from customers JOIN suzuki ON customers.car_id=suzuki.car_id;  -- Show the customer name and the car name.
+select c_name,price_lakh  from customers JOIN suzuki ON customers.car_id=suzuki.car_id; -- Show the customer name and the price of the car.
+select c_name,model,fuel from customers JOIN suzuki ON customers.car_id=suzuki.car_id; -- Show the customer name, model and fuel type.
+select c_name from customers JOIN suzuki ON customers.car_id=suzuki.car_id where fuel='Petrol'; -- Show the names of customers who bought Petrol cars.
+select sale_id,c_name from sale join customers ON customers.c_id=sale.c_id;-- Show the sale_id and the customer name.
+select sale_id,e_name from sale join employees ON employees.e_id=sale.e_id;  -- Show the sale_id and the employee name.
+select sale_id,car_name from sale JOIN suzuki ON sale.car_id=suzuki.car_id;-- Show the sale_id and the car_name.
+select c_name,e_name from customers; -- Show the customer name and the employee name.
+select c_name,e_name from sale join customers ON sale.c_id=customers.c_id join employees ON sale.e_id=employees.e_id; -- Show the customer name and the employee name.
+select sale_id,c_name,e_name,car_name,price_lakh from sale  -- -- show sale_id,c_name,e_name,car_name,price_lakh 
+join customers ON sale.c_id=customers.c_id              
+	JOIN employees ON sale.e_id=employees.e_id
+		JOIN suzuki ON sale.car_id=suzuki.car_id;
