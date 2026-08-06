@@ -51,7 +51,22 @@ in inner join only matching values will be returned
 
 select student_name,course_name from students LEFT join enrollments ON students.student_id=enrollments.student_id LEFT JOIN courses on enrollments.course_id=courses.course_id;	 -- Show all students and their course names, even if they are not enrolled.
 /* 
-IN LEFT JOIN ALL LEFT TABLE ENTITIES ARE VISIBLE IF NO MATCH THEN NULL 
-\*
-
+IN LEFT JOIN ALL LEFT TABLE ENTITIES ARE VISIBLE IF NO MATCH THEN NULL
+*/
+SELECT student_name, course_name FROM enrollments RIGHT JOIN students ON students.student_id = enrollments.student_id;
+/*
+IN right join the right table is priortized 
+*/
+SELECT student_name, enrollment_id
+FROM students
+LEFT JOIN enrollments
+ON students.student_id = enrollments.student_id
+UNION
+SELECT student_name, enrollment_id
+FROM students
+RIGHT JOIN enrollments
+ON students.student_id = enrollments.student_id;
+/*
+full outer join is not supported so we use union with left and right join 
+*/
 
